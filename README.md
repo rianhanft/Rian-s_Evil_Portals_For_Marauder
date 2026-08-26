@@ -1,5 +1,5 @@
 # Rians_Evil_Portals_For_Marauder
-A list of 100+ fresh, working captive portals specifically made for the marauder firmware. Files are all in .html format. More will be added frequently! send me a message on discord for any captive portal ideas. 
+A list of 50+ fresh, working captive portals specifically made for the marauder firmware. Files are all in .html format. More will be added frequently! send me a message on discord for any captive portal ideas. 
 
 Discord: hitgrandmanotjuul
 
