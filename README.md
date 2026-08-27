@@ -5,4 +5,6 @@ A list of 50+ fresh, working captive portals specifically made for the marauder 
 
 Discord: hitgrandmanotjuul
 
-Make sure html file/s are in the root directory on the Marauder and not in a separate folder, or it won't work!
+Make sure the HTML file (s) are in the root directory on the Marauder, not in a separate folder, or the portals won't work! 
+
+If you have any questions/concerns about a captive portal and it's not working, please let me know. 
