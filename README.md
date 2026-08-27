@@ -1,10 +1,35 @@
-# Rian’s Evil Portals For Marauder
-A list of 100+ fresh, working captive portals specifically made for the marauder firmware. Files are all in .html format. More will be added frequently! send me a message on discord for any captive portal ideas. 
+Rian’s Evil Portals for Marauder
 
-*WARNING* ONLY USE ON YOUR OWN NETWORK OR NETWORK YOU HAVE PERMISSION ACCESSING
+A collection of 100+ fresh captive portals specifically made for the Marauder firmware.
+
+All portals are provided as .html files, with more being added frequently.
+
+⚠️ WARNING: Only use these captive portals on networks you own or on networks where you have explicit permission to access and test.
+
+📦 Installation
+Download the captive portal .html file(s) you want to use.
+Copy the HTML file(s) to the root directory of your Marauder's storage.
+Do not place the files inside a separate folder.
+Launch Marauder and select the captive portal you want to use.
+
+Important: The HTML files must be located in the root directory of the Marauder's storage. If they are placed inside another folder, the portals may not work correctly.
+
+🌐 Captive Portals
+
+This repository contains 100+ captive portals designed specifically for Marauder.
+
+More portals will be added regularly!
+
+If you have an idea for a captive portal you'd like to see added, feel free to reach out.
+
+💬 Contact
 
 Discord: hitgrandmanotjuul
 
-Make sure the HTML file (s) are in the root directory on the Marauder, not in a separate folder, or the portals won't work! 
+If you encounter a problem with a captive portal or have questions/concerns about one of the files, let me know and I'll do my best to get it resolved.
 
-If you have any questions/concerns about a captive portal and it's not working, please let me know. 
+⚠️ Responsible Use
+
+These files are intended for authorized security testing, research, and educational purposes only.
+
+Only use them on your own network or on a network for which you have explicit permission to perform testing.
