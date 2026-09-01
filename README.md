@@ -35,5 +35,3 @@ If you encounter a problem with a captive portal or have questions/concerns abou
 These files are intended for authorized security testing, research, and educational purposes only.
 
 Only use them on your own network or on a network for which you have explicit permission to perform testing.
-
-▂▃▅▇  )))  ▇▅▃▂
