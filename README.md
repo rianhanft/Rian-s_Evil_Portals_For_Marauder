@@ -2,6 +2,7 @@
 
 
 
+
 🛜 A curated and maintained collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based captive portal structures. 
 
 ⚠️ WARNING: Only use these captive portals on networks you own or on networks where you have explicit permission to access and test.
