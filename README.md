@@ -1,6 +1,14 @@
+█████ █   █ █████ █       ████  ███  ████  █████  ███  █    
+█     █   █   █   █       █   █ █   █ █   █   █   █   █ █    
+█     █   █   █   █       █   █ █   █ █   █   █   █   █ █    
+████  █   █   █   █       ████  █   █ ████    █   █████ █    
+█     █   █   █   █       █     █   █ █ █     █   █   █ █    
+█      █ █    █   █       █     █   █ █  █    █   █   █ █    
+█████   █   █████ █████   █      ███  █   █   █   █   █ █████
+
 Rian’s Evil Portals for Marauder
 
-A collection of 400+ fresh captive portals specifically made for the Marauder firmware.
+A curated collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based captive portal structures.
 
 All portals are provided as .html files, with more being added frequently.
 
