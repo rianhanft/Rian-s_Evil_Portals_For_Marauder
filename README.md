@@ -1,4 +1,4 @@
-                                                            ▂▃▅▇  )))  ▇▅▃▂
+▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂
 Rian’s Evil Portals for Marauder
 
 A curated collection of 400+ ready-to-use captive portals built for the Marauder firmware — and compatible with any firmware that uses HTML-based captive portal structures.
@@ -34,3 +34,5 @@ If you encounter a problem with a captive portal or have questions/concerns abou
 These files are intended for authorized security testing, research, and educational purposes only.
 
 Only use them on your own network or on a network for which you have explicit permission to perform testing.
+
+▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  )))  ▇▅▃▂▂▃▅▇  ))) ▇▅▃
