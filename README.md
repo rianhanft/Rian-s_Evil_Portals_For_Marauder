@@ -17,7 +17,7 @@ Launch Marauder and select the captive portal you want to use.
 
 🌐 Captive Portals
 
-This repository contains 100+ captive portals designed specifically for Marauder.
+This repository contains 400+ captive portals designed specifically for and around the Marauder firmware.
 
 All portals are provided as .html files.
 
